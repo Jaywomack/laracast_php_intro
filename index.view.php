@@ -17,34 +17,30 @@
   </style>
 </head>
 <body>
-  <h1>Task for the day</h1>
+<!-- List out the names of the names array -->
+    <h2>Family members:</h2>
+    <ul>
+      <?php foreach ($names as $name) {
+        echo "<li>$name</li>";
+      } ?>
+    </ul>
 
-  <ul>
-      <?php foreach ($task1 as $heading => $value): ?>
-        <li>
-          <strong><?= ucfirst($heading) ?>:  <?= $value ?></strong>
-        </li>
-      <?php endforeach; ?>
-  </ul>
-
-        <h2>Task inputted manually</h2>
-  <ul>
-        <li>
-          <strong>Name: <?= $task1['title'] ?></strong>
-        </li>
-        <li>
-          <strong>Due Date: <?= $task1['due'] ?></strong>
-        </li>
-        <li>
-          <strong>Assigned To: <?= $task1['assigned_to'] ?></strong>
-        </li>
-        <li>
-          <strong>Completed: <?= $task1['completed']
-            ? 'Complete'
-            : 'Incomplete' ?></strong>
-        </li>
-  </ul>
-
+<!-- Create a list of the keys and values in the person associative array -->
+      <ul>
+      <?php foreach ($person as $x => $x_value) {
+        echo "<li><strong>$x: </strong>$x_value</li>";
+      } ?>
+      </ul>
+<!-- Create a list of the keys and values in the task associative array -->
+      <ul>
+        <?php foreach ($task as $t => $t_value) {
+          if ($t == 'completed') {
+            echo "<li><strong>$t: </strong>&#10003;</li>";
+          } else {
+            echo "<li><strong>$t: </strong>$t_value</li>";
+          }
+        } ?>
+      </ul>
 
 </body>
 </html>
