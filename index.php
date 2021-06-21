@@ -1,5 +1,10 @@
 <?php
-require 'connect.php';
-require 'index.view.php';
 
-connect_db();
+require 'functions.php';
+require 'Task.php';
+
+$pdo = connectToDb();
+
+$tasks = fetchAllTasks($pdo);
+
+require 'index.view.php';
